@@ -3,7 +3,6 @@
 START=$(date +%s)
 
 DEVICE="$1"
-ADDITIONAL="$2"
 
 case "$DEVICE" in
 	clean)
@@ -18,29 +17,27 @@ case "$DEVICE" in
           	exit
           	;;
 	captivate)
-		lunch=cyanogen_captivate-eng
+		brunch=captivate
 		;;
 	galaxys)
-		lunch=cyanogen_galaxys-eng
+		brunch=galaxys
 		;;
 	galaxysb)
-		lunch=cyanogen_galaxysb-eng
+		brunch=galaxysb
 		;;
 	vibrant)
-		lunch=cyanogen_vibrant-eng
+		brunch=vibrant
 		;;
 	*)
-		echo "Usage: $0 DEVICE ADDITIONAL"
+		echo "Usage: $0 DEVICE"
 		echo "Example: ./build.sh galaxys"
-		echo "Example: ./build.sh galaxys otapackage"
 		echo "Supported Devices: captivate, galaxys, galaxysb, vibrant"
 		exit 2
 		;;
 esac
 
 . build/envsetup.sh
-lunch ${lunch}
-make -j`grep 'processor' /proc/cpuinfo | wc -l` $ADDITIONAL
+brunch ${brunch}
 
 END=$(date +%s)
 ELAPSED=$((END - START))
