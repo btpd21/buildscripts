@@ -49,7 +49,10 @@ esac
 case "$ADDITIONAL" in
 	kernel)
 		lunch ${lunch}
-		make -j`grep 'processor' /proc/cpuinfo | wc -l` out/target/product/$DEVICE/kernel
+		cd kernel/samsung/2.6.35
+		./build.sh "$DEVICE"
+		cd ../../..
+		brunch ${brunch}
 		;;
 	*)
 		brunch ${brunch}
