@@ -21,6 +21,9 @@ case "$DEVICE" in
 		lunch=cyanogen_captivate-eng
 		brunch=captivate
 		;;
+	epic)
+		lunch=cyanogen_epic-eng
+		brunch=epic		;;
 	galaxys)
 		lunch=cyanogen_galaxys-eng
 		brunch=galaxys
@@ -37,7 +40,7 @@ case "$DEVICE" in
 		echo "Usage: $0 DEVICE ADDITIONAL"
 		echo "Example: ./build.sh galaxys (full build)"
 		echo "Example: ./build.sh galaxys kernel (kernel only)"
-		echo "Supported Devices: captivate, galaxys, galaxysb, vibrant"
+		echo "Supported Devices: captivate, epic, galaxys, galaxysb, vibrant"
 		exit 2
 		;;
 esac
