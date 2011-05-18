@@ -67,14 +67,6 @@ case "$ADDITIONAL" in
 		;;
 esac
 
-#
-# unconditionally build initial flashable zip as well
-#
-cd releasetools
-./universal.sh "$DEVICE"
-cd ../../..
-##
-
 END=$(date +%s)
 ELAPSED=$((END - START))
 E_MIN=$((ELAPSED / 60))
