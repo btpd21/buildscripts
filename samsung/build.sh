@@ -17,9 +17,9 @@ case "$DEVICE" in
           	./get-google-files
           	exit
           	;;
-	captivate)
-		lunch=cyanogen_captivate-eng
-		brunch=captivate
+	captivatemtd)
+		lunch=cyanogen_captivatemtd-eng
+		brunch=captivatemtd
 		;;
 	epic)
 		lunch=cyanogen_epic-eng
@@ -45,7 +45,7 @@ case "$DEVICE" in
 		echo "Usage: $0 DEVICE ADDITIONAL"
 		echo "Example: ./build.sh galaxys (full build)"
 		echo "Example: ./build.sh galaxys kernel (kernel only)"
-		echo "Supported Devices: captivate, epic, fascinate, galaxys, galaxysb, vibrant"
+		echo "Supported Devices: captivatemtd, epic, fascinate, galaxys, galaxysb, vibrant"
 		exit 2
 		;;
 esac
