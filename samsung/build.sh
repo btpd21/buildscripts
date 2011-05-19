@@ -11,12 +11,12 @@ case "$DEVICE" in
 		rm -rf ./out 
 		exit
 		;;
-     	prepare) 
-          	cd vendor/cyanogen 
-          	./get-rommanager
-          	./get-google-files
-          	exit
-          	;;
+    prepare) 
+        cd vendor/cyanogen 
+        ./get-rommanager
+        ./get-google-files
+        exit
+        ;;
 	captivatemtd)
 		lunch=cyanogen_captivatemtd-eng
 		brunch=captivatemtd
@@ -24,14 +24,14 @@ case "$DEVICE" in
 	epic)
 		lunch=cyanogen_epic-eng
 		brunch=epic		
-                ;;
+        ;;
 	fascinate)
 		lunch=cyanogen_fascinate-eng
 		brunch=fascinate
-                ;;
-	galaxys)
-		lunch=cyanogen_galaxys-eng
-		brunch=galaxys
+        ;;
+	galaxysmtd)
+		lunch=cyanogen_galaxysmtd-eng
+		brunch=galaxysmtd
 		;;
 	galaxysb)
 		lunch=cyanogen_galaxysb-eng
@@ -43,9 +43,9 @@ case "$DEVICE" in
 		;;
 	*)
 		echo "Usage: $0 DEVICE ADDITIONAL"
-		echo "Example: ./build.sh galaxys (full build)"
-		echo "Example: ./build.sh galaxys kernel (kernel only)"
-		echo "Supported Devices: captivatemtd, epic, fascinate, galaxys, galaxysb, vibrantmtd"
+		echo "Example: ./build.sh galaxysmtd (prebuilt kernel + android)"
+		echo "Example: ./build.sh galaxysmtd kernel (kernel + android)"
+		echo "Supported Devices: captivatemtd, epic, fascinate, galaxysmtd, galaxysb, vibrantmtd"
 		exit 2
 		;;
 esac
@@ -57,7 +57,7 @@ esac
 case "$ADDITIONAL" in
 	kernel)
 		lunch ${lunch}
-		cd kernel/samsung/2.6.35
+		cd kernel/samsung/aries
 		./build.sh "$DEVICE"
 		cd ../../..
 		brunch ${brunch}
