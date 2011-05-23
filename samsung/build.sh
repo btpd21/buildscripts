@@ -33,9 +33,9 @@ case "$DEVICE" in
 		lunch=cyanogen_galaxysmtd-eng
 		brunch=galaxysmtd
 		;;
-	galaxysb)
-		lunch=cyanogen_galaxysb-eng
-		brunch=galaxysb
+	galaxysbmtd)
+		lunch=cyanogen_galaxysbmtd-eng
+		brunch=galaxysbmtd
 		;;
 	vibrantmtd)
 		lunch=cyanogen_vibrantmtd-eng
@@ -45,7 +45,7 @@ case "$DEVICE" in
 		echo "Usage: $0 DEVICE ADDITIONAL"
 		echo "Example: ./build.sh galaxysmtd (prebuilt kernel + android)"
 		echo "Example: ./build.sh galaxysmtd kernel (kernel + android)"
-		echo "Supported Devices: captivatemtd, epic, fascinate, galaxysmtd, galaxysb, vibrantmtd"
+		echo "Supported Devices: captivatemtd, epic, fascinate, galaxysmtd, galaxysbmtd, vibrantmtd"
 		exit 2
 		;;
 esac
