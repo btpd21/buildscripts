@@ -18,34 +18,45 @@ case "$DEVICE" in
         exit
         ;;
 	captivatemtd)
+                board=aries
 		lunch=cyanogen_captivatemtd-eng
 		brunch=captivatemtd
 		;;
 	epic)
+                board=aries
 		lunch=cyanogen_epic-eng
 		brunch=epic		
         ;;
 	fascinate)
+                board=aries
 		lunch=cyanogen_fascinate-eng
 		brunch=fascinate
         ;;
+	galaxys2)
+                board=c1
+		lunch=cyanogen_galaxys2-eng
+		brunch=galaxys2
+		;;
 	galaxysmtd)
+                board=aries
 		lunch=cyanogen_galaxysmtd-eng
 		brunch=galaxysmtd
 		;;
 	galaxysbmtd)
+                board=aries
 		lunch=cyanogen_galaxysbmtd-eng
 		brunch=galaxysbmtd
 		;;
 	vibrantmtd)
+                board=aries
 		lunch=cyanogen_vibrantmtd-eng
 		brunch=vibrantmtd
 		;;
 	*)
 		echo "Usage: $0 DEVICE ADDITIONAL"
-		echo "Example: ./build.sh galaxysmtd (prebuilt kernel + android)"
-		echo "Example: ./build.sh galaxysmtd kernel (kernel + android)"
-		echo "Supported Devices: captivatemtd, epic, fascinate, galaxysmtd, galaxysbmtd, vibrantmtd"
+		echo "Example: ./build.sh galaxys2 (prebuilt kernel + android)"
+		echo "Example: ./build.sh galaxys2 kernel (kernel + android)"
+		echo "Supported Devices: captivatemtd, epic, fascinate, galaxys2, galaxysmtd, galaxysbmtd, vibrantmtd"
 		exit 2
 		;;
 esac
@@ -57,7 +68,7 @@ esac
 case "$ADDITIONAL" in
 	kernel)
 		lunch ${lunch}
-		cd kernel/samsung/aries
+		cd kernel/samsung/${board}
 		./build.sh "$DEVICE"
 		cd ../../..
 		brunch ${brunch}
